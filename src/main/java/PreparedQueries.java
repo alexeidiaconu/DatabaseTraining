@@ -9,8 +9,7 @@ public enum PreparedQueries {
             "  set shipped_date = getdate() + 7\n" +
             "  from sales.orders as so join sales.customers as sc on so.customer_id = sc.customer_id\n" +
             "  where sc.state = 'NY'"),
-
-
+    SQLDELETE("Delete top (5) from sales.orders\n" +
             " where sales.orders.customer_id in \n" +
             " (select sc.customer_id \n" +
             "  from sales.orders as so\n" +
